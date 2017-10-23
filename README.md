@@ -7,7 +7,7 @@ Mapping the Gene Symbols of an RNA-Seq or Microarray expression matrix into Entr
 [getGContent.py]
 Reads fasta files and calculates the GC content for each DNA sequence.
 
-# interactive PCA (R)
+# interactivePCA (R)
 [interactivePCA.R]
 Interactive web application for principal component analyses of gene expression matrices.
 
