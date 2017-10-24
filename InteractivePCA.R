@@ -4,10 +4,9 @@ pcaCharts <- function(x) {
   x.var <- x$sdev ^ 2
   x.pvar <- x.var/sum(x.var)
   x.pvar
-  par(mfrow=c(2,2))
+  par(mfrow=c(1,2))
   plot(x.pvar,xlab="Principal component", ylab="Proportion of variance explained", ylim=c(0,1), type='b')
   plot(cumsum(x.pvar),xlab="Principal component", ylab="Cumulative Proportion of variance explained", ylim=c(0,1), type='b')
-  par(mfrow=c(1,1))
 }
 
 ui <- fluidPage(
@@ -24,21 +23,39 @@ ui <- fluidPage(
     checkboxGroupInput("delimiter", "Delimiter:",
                        c("Tab" = "\t",
                          "Comma" = ",",
-                         "Semicolon" = ";"))
+                         "Semicolon" = ";")),
+    textInput('labels',h6('Add Sample Labels (comma separated)'), value='sample1, sample2')
   ),
     mainPanel(h3("Analysis Output",align = "center"),tabsetPanel(
+      tabPanel('Dataset Preview', tableOutput('dataset')),
       tabPanel("PCA Charts", fluidRow(plotOutput("pcacharts"),
-                                      textOutput('pcastats'))),
-               tabPanel("PCA Biplot", plotOutput("pcabiplot")
-      )))
+                                      htmlOutput('pcastats'))),
+               tabPanel("PCA Biplot", plotOutput("pcabiplot"))
+      )
+      )
               
 
     )
 
 server <- function(input, output) {
-
   
-  output$pcastats <- renderText({
+  
+  output$dataset <- renderTable({
+    inFile <- input$file1
+    
+    if (is.null(inFile))
+      return(NULL)
+    
+    exprmat = read.csv(inFile$datapath, header = input$header,sep = input$delimiter,dec = '.')
+    if (input$header == FALSE){
+      colnames(exprmat) = strsplit(input$labels,',')[[1]]
+    }
+    exprmat[1:20,]
+    
+  })
+  
+  
+  output$pcastats <- renderUI({
     inFile <- input$file1
     
     if (is.null(inFile))
@@ -49,7 +66,12 @@ server <- function(input, output) {
     exprmat_pca.var <- exprmat_pca$sdev ^ 2
     exprmat_pca.pvar <- exprmat_pca.var/sum(exprmat_pca.var)
     
-    paste('Component 1:', round(exprmat_pca.pvar[1],2)*100,'%','Component 2: ',round(exprmat_pca.pvar[2],2)*100,'%','Component 3: ',round(exprmat_pca.pvar[3],2)*100,'%')
+    HTML(paste('<b>Proportion of Variance explained:</b>','<br>','<br>',
+               'Component 1:', round(exprmat_pca.pvar[1],4)*100,'%','<br>',
+               'Component 2: ',round(exprmat_pca.pvar[2],4)*100,'%','<br>',
+               'Component 3: ',round(exprmat_pca.pvar[3],4)*100,'%','<br>',
+               'Component 4: ',round(exprmat_pca.pvar[4],4)*100,'%','<br>',
+                'Component 5: ',round(exprmat_pca.pvar[5],4)*100,'%'))
   })
 
   output$pcacharts <- renderPlot({
@@ -61,7 +83,6 @@ server <- function(input, output) {
     exprmat = read.csv(inFile$datapath, header = input$header,sep = input$delimiter,dec = '.')
     exprmat_pca = princomp(as.matrix(exprmat))
     
-    
     pcaCharts(exprmat_pca)
     
   })
@@ -72,6 +93,9 @@ server <- function(input, output) {
       return(NULL)
     
     exprmat = read.csv(inFile$datapath, header = input$header,sep = input$delimiter,dec = '.')
+    
+    colnames(exprmat) = strsplit(input$labels,',')[[1]]
+    
     exprmat_pca = princomp(as.matrix(exprmat))
     
     biplot(exprmat_pca)
@@ -79,7 +103,5 @@ server <- function(input, output) {
   })
 }
     
-
-
 # Create Shiny app ----
 shinyApp(ui = ui, server = server)
