@@ -9,7 +9,7 @@ Reads fasta files and calculates the GC content for each DNA sequence.
 
 # interactivePCA (R)
 [interactivePCA.R]
-Interactive web application for principal component analyses of gene expression matrices.
+Interactive web application for principal component analyses of gene expression matrices. Access web application: https://biosys.shinyapps.io/interactivepca/
 
 # stringNetwork (R)
 [stringNetwork.R]
