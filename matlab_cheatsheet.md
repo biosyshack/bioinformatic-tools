@@ -1,2 +1,6 @@
-
-Find element in Cell Array:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index = find([C{:}] == 5);
+#Find element in Cell Array:
+//
+index = find([C{:}] == 5);
+//
+IndexC = strfind(C, 'bla');
+Index = find(not(cellfun('isempty', IndexC)));
