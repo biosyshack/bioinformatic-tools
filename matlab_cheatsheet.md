@@ -4,7 +4,7 @@
 
 # Match Gene Expression Arrays:
 - Match two arrays
-*  [sharedVals,idxsHNSSC] = intersect(GeneNames_cafHNSSc,GeneNames_cafBRC,'stable');
+*    [sharedVals,idxsHNSSC] = intersect(GeneNames_cafHNSSc,GeneNames_cafBRC,'stable');
 *  [sharedVals,idxsBRC] = intersect(GeneNames_cafBRC,GeneNames_cafHNSSC,'stable');
 *  GeneNames_cafHNSSC= GeneNames_cafHNSSC(idxsHNSSC, :)
 *  GeneNames_cafBRC = GeneNames_cafBRC(idxsBRC, :)
