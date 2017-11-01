@@ -12,6 +12,7 @@ RnaSeq_HNSSC= RnaSeq_HNSSC(idxsHNSSC, :)
 RnaSeq_BRC = RnaSeq_BRC(idxsBRC, :)
 RnaSeq_combined = [RnaSeq_BRC, RnaSeq_HNSSC]
 
-## Nice Wrapper Function for multiple arrays: mathworks.com/matlabcentral/fileexchange/28341-set-functions-with-multiple-inputs
+## Nice Wrapper Function for multiple arrays: 
 2. [z, iw, i1, i2, i3, i4]  = intersectm(upper(cellstr(GeneNamesW)),upper(cellstr(GeneNames1)),upper(cellstr(GeneNames2)),...
 upper(cellstr(GeneNames3)), upper(cellstr(GeneNames4)), 'rows')
+(mathworks.com/matlabcentral/fileexchange/28341-set-functions-with-multiple-inputs)
