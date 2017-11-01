@@ -1,9 +1,9 @@
-# Find Element in Cell Array:
+# Find Element in Cell Array
 ```
 index = find([C{:}] == 5);
 IndexC = strfind(C, 'bla'); Index = find(not(cellfun('isempty', IndexC)));
 ```
-# Match Gene Expression Arrays:
+# Match Gene Expression Arrays
 ## Match two arrays
 ```
 [sharedVals,idxsHNSSC] = intersect(GeneNames_cafHNSSc,GeneNames_cafBRC,'stable');
@@ -15,7 +15,7 @@ RnaSeq_BRC = RnaSeq_BRC(idxsBRC, :)
 RnaSeq_combined = [RnaSeq_BRC, RnaSeq_HNSSC]
 ```
 
-## Nice Wrapper Function for multiple arrays: 
+## Nice Wrapper Function for multiple arrays
 ```
 [z, iw, i1, i2, i3, i4]  = intersectm(upper(cellstr(GeneNamesW)),upper(cellstr(GeneNames1)),...
 upper(cellstr(GeneNames2)),upper(cellstr(GeneNames3)), upper(cellstr(GeneNames4)), 'rows')
