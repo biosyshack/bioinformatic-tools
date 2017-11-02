@@ -18,3 +18,8 @@ Creation of protein interaction networks for Cytoscape using the STRING database
 # Matlab Cheat Sheet (Matlab)
 [matlab_cheatsheet.R]
 Matlab Cheatsheet for common problems in big data analysis. 
+
+
+# Create Numeric Table from CSV with missing data (Python)
+[createNumTable.py]
+Creates numeric table from a csv file that contains 'NAN' values and sets empty columns with zeros. Useful for working with 'dirty' data. 
