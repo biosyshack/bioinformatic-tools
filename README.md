@@ -3,9 +3,9 @@
 Mapping the Gene Symbols of an RNA-Seq or Microarray expression matrix into EntreZ or Uniprot identifiers
 (input: delimiter-separated file, prerequisites: mygene bioconductor package for EntreZ mapping, UniProt master file for UniProt).
 
-# getGContent (Python) 
-[getGContent.py]
-Reads fasta files and calculates the GC content for each DNA sequence.
+# Fasta Analyzer (Python) 
+[fastaAnalyzer.py]
+Reads fasta files, calculates the GC content for each DNA sequence and translates the latter into protein sequences
 
 # interactivePCA (R)
 [interactivePCA.R]
