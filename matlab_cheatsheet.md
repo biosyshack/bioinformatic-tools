@@ -31,7 +31,8 @@ ferror = @(xtrain, ytrain, xtest, ytest)nnz(ytest ~= predict(fitcdiscr(xtrain, y
 
 tic
 paroptions = statset('UseParallel',true);
-[selected, history] = sequentialfs(ferror, Data{:,1:end-1}, categorical(Data{:,end}),'nfeatures', 50,'Options',paroptions)
+[selected, history] = sequentialfs(ferror, Data{:,1:end-1}, categorical(Data{:,end}),...
+'nfeatures', 50,'Options',paroptions)
 toc
 
 mdlPart = fitcdiscr(Data(:,[selected true]),categorical(Data{:,end}), 'KFold', 10)
