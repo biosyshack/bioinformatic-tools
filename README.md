@@ -22,4 +22,4 @@ Matlab Cheatsheet for common problems in big data analysis.
 
 # Create Numeric Table from CSV with missing data (Python)
 [createNumTable.py]
-Creates numeric table from a csv file that contains 'NAN' values and sets empty columns with zeros. Useful for working with 'dirty' data. 
+Creates numeric table from a csv file that contains 'NAN' values and fills empty columns with zeros. Useful for working with 'dirty' data. 
