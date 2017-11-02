@@ -1,5 +1,3 @@
-# Refresher Course // Working with strings // Relative GC content
-
 ## Reads fasta files, calculates the GC content for each DNA sequence and translates the latter into protein sequences
 ## version:     1.1
 ## date:        02.11.2017
