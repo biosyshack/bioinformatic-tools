@@ -5,7 +5,7 @@ Mapping the Gene Symbols of an RNA-Seq or Microarray expression matrix into Entr
 
 # Fasta Analyzer (Python) 
 [fastaAnalyzer.py]
-Reads fasta files, calculates the GC content for each DNA sequence and translates the latter into protein sequences
+Reads fasta files, calculates the GC content for each DNA sequence and translates the latter into protein sequences.
 
 # interactivePCA (R)
 [interactivePCA.R]
