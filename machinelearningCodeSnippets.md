@@ -29,7 +29,6 @@ write.table(as.matrix(genenames_uncorr), '/feature_uncorr.txt',
 library(caret)
 library(doMC)
 
-
 registerDoMC(cores = 10)
 
 data = read.csv("~/predmodel.txt",sep = "\t", header=T)
