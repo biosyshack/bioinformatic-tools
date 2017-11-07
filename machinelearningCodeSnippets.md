@@ -27,20 +27,23 @@ write.table(as.matrix(genenames_uncorr), '/feature_uncorr.txt',
 
 ```
 library(caret)
-library(doMC)
+library(doParallel)
 
-registerDoMC(cores = 10)
+cl = makeCluster(10) # specify number of cores
+
+registerDoParallel(cl)
 
 data = read.csv("~/predmodel.txt",sep = "\t", header=T)
 
 data = data[1:18,1:7530] # optional: resize model
 
-ctrl <- gafsControl(functions = caretGA,verboseIter = TRUE)
-obj <- gafs(x = predictors, 
+ctrl = gafsControl(functions = caretGA,verbose = TRUE)
+obj = gafs(x = predictors, 
             y = outcome,
             iters = 100,
             gafsControl = ctrl,           
             method = "lda")
+stopCluster(cl)
 ```
 
 
