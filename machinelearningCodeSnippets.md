@@ -23,6 +23,27 @@ write.table(as.matrix(genenames_uncorr), '/feature_uncorr.txt',
             sep = '\t', quote = F, row.names = F, col.names = F)
 
 ```
+## Feature Selection using Genetic Algorithms (Parallelized, Linear Discriminant Analysis) [Caret Package R]
+
+```
+library(caret)
+library(doMC)
+
+
+registerDoMC(cores = 10)
+
+data = read.csv("~/predmodel.txt",sep = "\t", header=T)
+
+data = data[1:18,1:7530] # optional: resize model
+
+ctrl <- gafsControl(functions = caretGA,verboseIter = TRUE)
+obj <- gafs(x = predictors, 
+            y = outcome,
+            iters = 100,
+            gafsControl = ctrl,           
+            method = "lda")
+```
+
 
 ## Parallelized Sequential Feature Selection (Top 50, very slow).  [Matlab]
 ```
