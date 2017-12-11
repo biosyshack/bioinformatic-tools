@@ -27,5 +27,5 @@ Creates numeric table from a csv file that contains 'NAN' values and fills empty
 [machinelearningCodeSnippets.md]
 Code Snippets for common machine learning applications in bioinformatics and big data analysis in general.
 
-# Microarray Processing Pipeline
+# Microarray Processing Pipeline (R, Python)
 Retrieval, annotation, normaliziation and further pre-processing of microarray data from GEO.
