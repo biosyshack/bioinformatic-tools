@@ -19,7 +19,7 @@ Creation of protein interaction networks for Cytoscape using the STRING database
 [matlab_cheatsheet.R]
 Matlab Cheatsheet for common problems in big data analysis. 
 
-# Create Numeric Table from CSV with missing data (Python)
+# Create numeric table from CSV with missing data (Python)
 [createNumTable.py]
 Creates numeric table from a csv file that contains 'NAN' values and fills empty columns with zeros. Useful for working with 'dirty' data. 
 
@@ -29,3 +29,6 @@ Code Snippets for common machine learning applications in bioinformatics and big
 
 # Microarray Processing Pipeline (R, Python)
 Retrieval, annotation, normaliziation and further pre-processing of microarray data from GEO.
+
+# Subdividision of Big Data file (Python)
+[chunkFile.py] Subdivison of big data file into smaller chunks (by line).
