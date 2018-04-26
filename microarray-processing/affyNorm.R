@@ -9,7 +9,7 @@ getGEOSuppFiles("GSE22862")
 setwd("~/GSE22862/GSE22862")
 
 untar("GSE22862_RAW.tar", exdir = "data")
-cels = list.files("~/GSE22862/GSE22862/data", pattern = "CEL") # sometiles, it is 'CEL', you need to check it first
+cels = list.files("~/GSE22862/GSE22862/data", pattern = "CEL")
 sapply(paste("data", cels[], sep = "/"), gunzip)
 
 cels = list.files("~/GEO/GSE22862/GSE22862/data", full=T)
