@@ -1,3 +1,15 @@
+#######################################################
+# Filename: annotateMA.py
+# Created: David Lauenstein
+# Change history:
+# 26.04.2018 / David Lauenstein
+#######################################################
+# Annotate processed gene expression matrix
+# Inputs: 
+#   - annotated gene expression matrix
+#   - numerical gene expression matrix
+#######################################################
+
 import csv
 
 with open(r'~\GSE22862_annotate.txt', mode='r') as f:
