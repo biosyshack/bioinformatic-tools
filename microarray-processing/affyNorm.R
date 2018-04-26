@@ -10,6 +10,7 @@
 library(GEOquery)
 library(affy)
 
+## Retrieve GEO datasets
 # set working directory for download
 setwd("~/GSE22862")
 
@@ -23,6 +24,7 @@ untar("GSE22862_RAW.tar", exdir = "data")
 cels = list.files("~/GSE22862/GSE22862/data", pattern = "CEL")
 sapply(paste("data", cels[], sep = "/"), gunzip)
 
+## Normalize datasets
 cels = list.files("~/GEO/GSE22862/GSE22862/data", full=T)
 
 # set working directory for normalization
