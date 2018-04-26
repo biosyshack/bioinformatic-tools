@@ -4,7 +4,7 @@
 # Change history:
 # 26.04.2018 / David Lauenstein
 #######################################################
-# Calculate mean gene expression across identical probes
+# Calculates mean gene expression across identical probes
 # Inputs: 
 #   - gse: expression matrix with annotation
 #   - gse_num: expression file without annotation (only numeric values)
