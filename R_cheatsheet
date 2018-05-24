@@ -1,0 +1,6 @@
+# Negative Selection in Matrices
+```
+matrix_a = matrix_a[-selection,] # '-' operater removes columns by index
+matrix_b = matrix_a[!selection,] # '!' operater removes columns by logical values
+
+```
