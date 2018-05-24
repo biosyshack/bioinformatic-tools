@@ -16,8 +16,12 @@ Interactive web application for principal component analyses of gene expression 
 Creation of protein interaction networks for Cytoscape using the STRING database. 
 
 # Matlab Cheat Sheet (Matlab)
-[matlab_cheatsheet.R]
+[matlab_cheatsheet.md]
 Matlab Cheatsheet for common problems in big data analysis. 
+
+# R Cheat Sheet (R)
+[R_cheatsheet.md]
+R Cheatsheet for common problems in big data analysis. 
 
 # Create numeric table from CSV with missing data (Python)
 [createNumTable.py]
