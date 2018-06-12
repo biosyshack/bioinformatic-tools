@@ -62,3 +62,34 @@ toc
 mdlPart = fitcdiscr(Data(:,[selected true]),categorical(Data{:,end}), 'KFold', 10)
 parLoss = kfoldLoss(mdlPart)
 ```
+## Performance Assessment of Machine Learning Models using ROC curves.  [R]
+```
+library(caret)
+library(pROC)
+
+control = trainControl(method="repeatedcv", number=3, repeats=3,verboseIter = TRUE,
+                       savePredictions = TRUE,classProbs=T,summaryFunction=twoClassSummary)
+# train model using LDA
+model = train(Outcome~., data=train, method="svmLinear", preProcess="scale", trControl=control)
+
+# plot ROC curve and calculate AUC
+plot.roc(model$pred$obs,model$pred$diabetes)
+auc(model$pred$obs,model$pred$diabetes)
+
+```
+## Implementation of custom metric for training function in caret (F1 score).  [R]
+```
+library(caret)
+library(MLmetrics)
+
+# See http://topepo.github.io/caret/training.html#metric 
+# and https://stackoverflow.com/questions/37666516/caret-package-custom-metric
+f1 = function(data, lev = NULL, model = NULL) {
+  f1_val = F1_Score(y_pred = data$pred, y_true = data$obs, positive = lev[1])
+  c(F1 = f1_val)
+}
+
+model = train(Class ~ ., data = dat, method = "smvLinear", metric = "F1",
+             trControl = trainControl(summaryFunction = f1, classProbs = TRUE))
+```
+
